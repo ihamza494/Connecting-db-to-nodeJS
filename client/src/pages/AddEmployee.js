@@ -26,7 +26,7 @@ function AddEmployee() {
   return (
     <div className='addEmployeePage'>
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-            <Form>
+            <Form className='formContainer'>
                 <label>Title:</label>
                 <Field id="addEmployee" name="title" placeholder="(Example: Hamza Iqbal...)"/>
                 <label>Designation:</label>
