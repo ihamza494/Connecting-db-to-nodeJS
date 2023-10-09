@@ -2,8 +2,11 @@ import React from 'react'
 import {Form, Formik, Field} from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup'; 
+import { useNavigate } from 'react-router-dom';
 
 function AddEmployee() {
+
+    const navigate = useNavigate();
     const initialValues = {
         title:"",
         designation:"",
@@ -19,6 +22,8 @@ function AddEmployee() {
     const onSubmit =(object)=>{
         axios.post("http://localhost:3030/EmpData", object).then(()=>{
             console.log("WORKED");
+            navigate('/');
+
         })
     }
 

@@ -4,8 +4,7 @@
   height: auto;
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  flex-direction: column;
+   flex-direction: column;
 }
 
 .container{
@@ -27,7 +26,7 @@ body{
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(6, 154, 105);;
+  border: 1px solid rgb(47, 50, 50);;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 6px 0px;
 }
@@ -45,7 +44,7 @@ body{
 .post .designation {
   height: 200px;
   border-bottom: 1px solid black;
-  font-size: 70px;
+  font-size: 50px;
   font-family: fantasy;
 }
 
@@ -96,7 +95,7 @@ body{
   margin-top: 15px;
   height: 40px;
   border: none;
-  background-color: rgb(6, 154, 105);
+  background-color: rgb(48, 47, 50);
   border-radius: 5px;
   color: white;
 }
@@ -104,10 +103,84 @@ body{
 .formContainer button:hover {
 cursor: pointer;
 background-color: white;
-color: rgb(6, 154, 105);
-border: 1px solid rgb(6, 154, 105);;
+color: rgb(49, 48, 50);
+border: 1px solid rgb(49, 48, 50);;
 }
 
 span{
   color: red;
+}
+
+.header{
+  background-color: rgb(49, 48, 50);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header a{
+  color: white;
+  font-size: small;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.header a:hover{
+  font-size: large;
+  border: 1px solid white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.empDetailPage{
+  /* text-align: center;
+  border: 1px dotted rgb(6, 154, 105);
+  width: 80%;
+  height: 650px;
+  margin-top: 10px; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.leftSide{
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.rightSide{
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+#individual{
+  height: 300px;
+  width: 600px;
+}
+
+#individual .title, 
+#individual .footer{
+height: 50px;
+  border: 1px solid black;
+  background-color: black;
+  color: antiquewhite;
+  text-align: center;
+  align-items: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+#individual .footer{
+  margin-top: 200px;
+}
+
+#individual .body{
+  font-size: 25px;
 }
