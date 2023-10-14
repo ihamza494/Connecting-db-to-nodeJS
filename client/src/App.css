@@ -184,3 +184,49 @@ height: 50px;
 #individual .body{
   font-size: 25px;
 }
+
+
+.addReviewCOntainer input{
+  min-height: 100px;
+  width: 400px;
+  border-radius: 3px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #797979;
+  margin-bottom: 10px;
+  border-color: black;
+}
+
+.addReviewCOntainer button{
+  width: 200px;
+  background-color:black;
+  border-color:  white;
+  color: white;
+  border-radius: 10%;
+
+}
+
+.addReviewCOntainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-right: 100px;
+}
+
+.listOfReviews{
+  width: 500px;
+  height:max-content;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.review{
+  height: 50px;
+  margin: 5px;
+ border: 1px solid black;
+ color: black;
+ border-radius:   8px;
+
+}

@@ -14,5 +14,11 @@ module.exports = (sequelize, DataTypes)=>{
         }
     });
 
+    EmployeeData.associate = (models) =>{
+        EmployeeData.hasMany(models.Reviews, {
+            onDelete: "cascade",
+        });
+    }
+
     return EmployeeData;
 }

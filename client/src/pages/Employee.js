@@ -7,12 +7,27 @@ import axios from 'axios'
 function Employee() {
     let { id } = useParams();
     const [ emp,  setEmp] = useState([]);
+    const [ listofReviews, setListOfReviews] = useState([]);
+    const [newReview, setNewReview] = useState("");
     useEffect(()=>{
         axios.get(`http://localhost:3030/EmpData/byId/${id}`).then((response)=>{
             setEmp(response.data);
             console.log(response.data);
         });
+        axios.get(`http://localhost:3030/reviews/${id}`).then((response)=>{
+            setListOfReviews(response.data);
+            console.log(response.data);
+        });
     }, []);
+
+    const addReview=()=>{
+        axios.post(`http://localhost:3030/reviews`, { reviewBody: newReview, EmployeeDatumId: id}).then((response)=>{
+            console.log('Added successfully: ' + JSON.stringify(response));
+            const reviewToAdd = {reviewBody: newReview};
+            setListOfReviews([...listofReviews, reviewToAdd]);
+            setNewReview("");
+        })
+    }
 
   return (
     <div className='empDetailPage'>
@@ -24,7 +39,16 @@ function Employee() {
                 </div>
             </div>
             <div className='rightSide'>
-                Review Section
+            <div className='addReviewCOntainer'>
+                    <input type='text' placeholder='Review...' autoComplete='off' value={newReview} onChange={(event)=>{setNewReview(event.target.value)}}/>
+                    <button onClick={addReview}>Add Review</button>
+                </div>
+            <div className='listOfReviews'>
+                
+                {listofReviews.map((review)=>{
+                    return <div className='review'>{review.reviewBody}</div>
+                })}
+            </div>
             </div>
     </div>
   )
